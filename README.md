@@ -2,20 +2,21 @@
 
 GitHub template for Cloudflare Workers projects.
 
-## Usage
+## Use
 
-1. "Use this template" on GitHub, clone
-2. `bash install.sh` — adds workers-core as `.core` submodule, sets hooks
-3. `make dev` — local dev
-4. `make deploy` — deploy to Workers
+1. "Use this template" on GitHub → clone
+2. `curl -sL https://raw.githubusercontent.com/JakobMelchard/core/main/install.sh | bash`
+3. Edit `wrangler.toml` (name, bindings)
+4. Edit `src/index.js` with your handler
+5. `make dev` to develop, `make deploy` to ship
 
 ## Structure
 
 ```
-wrangler.toml       # Worker config
-src/index.js        # Entry point
-package.json        # wrangler devDependency
-Makefile            # include .core/Makefile
-install.sh          # Bootstrap
-update.sh           # Pull latest workers-core
+wrangler.toml           # Worker config (edit me!)
+src/index.js            # Entry point (edit me!)
+package.json            # wrangler devDependency
+Makefile                # dev|validate|deploy
+.core/                  # submodule (added by install.sh)
+.github/workflows/release.yml  # seeded by install.sh
 ```

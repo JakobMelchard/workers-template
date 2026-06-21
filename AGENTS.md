@@ -1,10 +1,15 @@
-# workers-template — CF Workers project template
+# workers-template — CF Workers project
 
 ```sh
-bash install.sh     # adds .core submodule, sets hooks
-make dev            # wrangler dev
-make deploy         # wrangler deploy
-bash update.sh      # pull latest workers-core
+curl -sL https://raw.githubusercontent.com/JakobMelchard/core/main/install.sh | bash
 ```
 
-CI: release-please only. Deploy via pre-push hook.
+Edit `wrangler.toml` with your worker name and bindings.
+
+## Commands
+
+```sh
+make dev        # wrangler dev
+make validate   # wrangler deploy --dry-run
+make deploy     # wrangler deploy
+```
