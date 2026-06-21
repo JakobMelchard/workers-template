@@ -1,7 +1,7 @@
 # workers-template — CF Workers project
 
 ```sh
-curl -sL https://raw.githubusercontent.com/JakobMelchard/core/main/install.sh | bash
+curl -sL https://raw.githubusercontent.com/JakobMelchard/cloudflare-core/main/install.sh | bash
 ```
 
 Edit `wrangler.toml` with your worker name and bindings.

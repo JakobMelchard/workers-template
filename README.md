@@ -5,7 +5,7 @@ GitHub template for Cloudflare Workers projects.
 ## Use
 
 1. "Use this template" on GitHub → clone
-2. `curl -sL https://raw.githubusercontent.com/JakobMelchard/core/main/install.sh | bash`
+2. `curl -sL https://raw.githubusercontent.com/JakobMelchard/cloudflare-core/main/install.sh | bash`
 3. Edit `wrangler.toml` (name, bindings)
 4. Edit `src/index.js` with your handler
 5. `make dev` to develop, `make deploy` to ship
