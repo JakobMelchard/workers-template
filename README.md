@@ -1,22 +1,42 @@
 # workers-template
 
-GitHub template for Cloudflare Workers projects.
+Quick-start for Cloudflare Workers projects.
 
 ## Use
 
-1. "Use this template" on GitHub → clone
-2. `curl -sL https://raw.githubusercontent.com/JakobMelchard/cloudflare-core/main/install.sh | bash`
-3. Edit `wrangler.toml` (name, bindings)
-4. Edit `src/index.js` with your handler
-5. `make dev` to develop, `make deploy` to ship
+```sh
+git clone --depth 1 https://github.com/JakobMelchard/cloudflare-core.git my-worker
+cd my-worker
+rm -rf .git
+git init
+cat > wrangler.toml <<'EOF'
+name = "my-worker"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+EOF
+mkdir src && touch src/index.js
+```
+
+Or use the local install script in an existing dir:
+
+```sh
+bash install.sh
+cat > wrangler.toml <<'EOF'
+name = "my-worker"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+EOF
+mkdir src && touch src/index.js
+```
 
 ## Structure
 
 ```
 wrangler.toml           # Worker config (edit me!)
 src/index.js            # Entry point (edit me!)
-package.json            # wrangler devDependency
 Makefile                # dev|validate|deploy
-.core/                  # submodule (added by install.sh)
-.github/workflows/release.yml  # seeded by install.sh
+hooks/                  # git hooks (pre-commit, pre-push)
+.github/workflows/      # CI (release-please)
 ```
+
+See [cloudflare-core](https://github.com/JakobMelchard/cloudflare-core).
