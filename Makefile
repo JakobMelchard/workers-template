@@ -1,4 +1,5 @@
 .ONESHELL:
+MAKEFLAGS += --silent
 ROOT := $(shell git rev-parse --show-toplevel 2>/dev/null || pwd)
 PORT ?= 8787
 
