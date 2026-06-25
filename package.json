@@ -1,8 +1,13 @@
 {
-  "private": true,
   "name": "my-worker",
+  "private": true,
   "version": "0.1.0",
   "devDependencies": {
+    "prettier": "^3",
     "wrangler": "^4.0.0"
+  },
+  "scripts": {
+    "format": "prettier --write src/",
+    "format:check": "prettier --check src/"
   }
 }
